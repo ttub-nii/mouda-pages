@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouda — Privacy & Support</title>
+    <meta name="description" content="Mouda privacy policy and support page.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            line-height: 1.7;
+            color: #1c1c1e;
+            background: #fafafa;
+            padding: 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        h1 {
+            font-size: 28px;
+            letter-spacing: -0.02em;
+        }
+        .lang-switch {
+            display: inline-flex;
+            background: #f2f2f7;
+            border-radius: 10px;
+            padding: 4px;
+            gap: 2px;
+        }
+        .lang-switch button {
+            border: 0;
+            background: transparent;
+            padding: 6px 14px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6c6c70;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .lang-switch button.active {
+            background: #fff;
+            color: #1c1c1e;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+        }
+        .updated {
+            color: #8e8e93;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+        nav.toc {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+        nav.toc a {
+            font-size: 13px;
+            font-weight: 600;
+            color: #007aff;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            background: #f0f7ff;
+        }
+        nav.toc a:hover { background: #e1efff; }
+        h2 {
+            font-size: 22px;
+            margin-top: 40px;
+            margin-bottom: 14px;
+            letter-spacing: -0.01em;
+        }
+        h2:first-of-type { margin-top: 0; }
+        h3 {
+            font-size: 17px;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+        p, li {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        ul {
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+        a { color: #007aff; }
+        .highlight {
+            background: #f0f7ff;
+            border-left: 4px solid #007aff;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .highlight strong { display: block; margin-bottom: 4px; }
+        .section-divider {
+            height: 1px;
+            background: #e5e5ea;
+            margin: 40px 0;
+        }
+        .contact-card {
+            background: #f9f9fb;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 16px;
+        }
+        .contact-card dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; }
+        .contact-card dt { color: #8e8e93; font-size: 14px; }
+        .contact-card dd { font-size: 15px; }
+        footer {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            color: #8e8e93;
+            text-align: center;
+        }
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        @media (prefers-color-scheme: dark) {
+            body { background: #000; color: #f2f2f7; }
+            .container { background: #1c1c1e; box-shadow: none; }
+            .lang-switch { background: #2c2c2e; }
+            .lang-switch button { color: #98989d; }
+            .lang-switch button.active { background: #48484a; color: #fff; }
+            .updated, footer, .contact-card dt { color: #8e8e93; }
+            nav.toc a { background: #1a2a3f; color: #409cff; }
+            nav.toc a:hover { background: #253a55; }
+            .highlight { background: #1a2a3f; border-left-color: #409cff; }
+            .section-divider { background: #2c2c2e; }
+            .contact-card { background: #2c2c2e; }
+            footer { border-top-color: #2c2c2e; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mouda</h1>
+            <div class="lang-switch" role="tablist" aria-label="Language">
+                <button data-set-lang="en" type="button">EN</button>
+                <button data-set-lang="ko" type="button">한국어</button>
+                <button data-set-lang="ja" type="button">日本語</button>
+            </div>
+        </header>
+
+        <!-- English -->
+        <div data-lang="en">
+            <p class="updated">Last updated: April 23, 2026</p>
+            <nav class="toc">
+                <a href="#privacy-en">Privacy Policy</a>
+                <a href="#support-en">Support</a>
+            </nav>
+
+            <h2 id="privacy-en">Privacy Policy</h2>
+            <div class="highlight">
+                <strong>Mouda does not collect, store, or transmit any personal data.</strong>
+                All your financial data stays entirely on your device.
+            </div>
+
+            <h3>Data Storage</h3>
+            <p>Mouda stores all data locally on your device using Apple's SwiftData framework. Your financial information — including asset names, categories, and monthly records — never leaves your device.</p>
+
+            <h3>Data Collection</h3>
+            <p>We do not collect any information, including but not limited to:</p>
+            <ul>
+                <li>Personal identification information</li>
+                <li>Financial data or transaction details</li>
+                <li>Usage analytics or tracking data</li>
+                <li>Device identifiers</li>
+                <li>Location data</li>
+            </ul>
+
+            <h3>Third-Party Services</h3>
+            <p>Mouda does not integrate with any third-party analytics, advertising, or tracking services. The app operates entirely offline and makes no network requests.</p>
+
+            <h3>Data Deletion</h3>
+            <p>Because all data is stored locally on your device, you can delete every record at any time by deleting the app. No data remains on any external server.</p>
+
+            <h3>Children's Privacy</h3>
+            <p>Mouda does not collect any data from any user, including children under the age of 13.</p>
+
+            <h3>Changes to This Policy</h3>
+            <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated revision date.</p>
+
+            <div class="section-divider"></div>
+
+            <h2 id="support-en">Support</h2>
+            <p>Need help using Mouda, found a bug, or have a feature request? We would love to hear from you.</p>
+
+            <div class="contact-card">
+                <dl>
+                    <dt>Email</dt>
+                    <dd><a href="mailto:ostarangelo@naver.com">ostarangelo@naver.com</a></dd>
+                    <dt>Issues</dt>
+                    <dd><a href="https://github.com/ttub-nii/mouda-pages/issues">GitHub Issues</a></dd>
+                    <dt>Response time</dt>
+                    <dd>Usually within 2–3 business days</dd>
+                </dl>
+            </div>
+
+            <h3>Frequently Asked Questions</h3>
+            <p><strong>Is my data backed up?</strong><br>Mouda stores data locally on your device. You can enable iCloud backup through iOS system settings to include app data in your device backup.</p>
+            <p><strong>Can I use Mouda on multiple devices?</strong><br>Data is stored locally per-device. Cross-device sync is not currently supported.</p>
+            <p><strong>How do I delete all my data?</strong><br>Simply delete the app from your device. All data is removed together with the app.</p>
+        </div>
+
+        <!-- Korean -->
+        <div data-lang="ko">
+            <p class="updated">최종 업데이트: 2026년 4월 23일</p>
+            <nav class="toc">
+                <a href="#privacy-ko">개인정보 처리방침</a>
+                <a href="#support-ko">지원</a>
+            </nav>
+
+            <h2 id="privacy-ko">개인정보 처리방침</h2>
+            <div class="highlight">
+                <strong>Mouda는 어떠한 개인정보도 수집·저장·전송하지 않습니다.</strong>
+                모든 자산 데이터는 오직 사용자의 기기에만 저장됩니다.
+            </div>
+
+            <h3>데이터 저장</h3>
+            <p>Mouda는 Apple의 SwiftData 프레임워크를 통해 모든 데이터를 사용자 기기에 로컬로 저장합니다. 자산 이름, 카테고리, 월별 기록 등 모든 금융 정보는 기기를 벗어나지 않습니다.</p>
+
+            <h3>데이터 수집</h3>
+            <p>다음을 포함한 어떠한 정보도 수집하지 않습니다:</p>
+            <ul>
+                <li>개인 식별 정보</li>
+                <li>금융 데이터 및 거래 내역</li>
+                <li>사용 분석 또는 추적 데이터</li>
+                <li>기기 식별자</li>
+                <li>위치 정보</li>
+            </ul>
+
+            <h3>제3자 서비스</h3>
+            <p>Mouda는 분석, 광고, 추적 등 어떠한 제3자 서비스와도 연동되어 있지 않습니다. 앱은 완전히 오프라인으로 동작하며 네트워크 요청을 전송하지 않습니다.</p>
+
+            <h3>데이터 삭제</h3>
+            <p>모든 데이터는 사용자 기기에 로컬로 저장되므로, 앱을 삭제하면 언제든지 모든 기록을 완전히 삭제할 수 있습니다. 외부 서버에 남는 데이터는 없습니다.</p>
+
+            <h3>아동의 개인정보</h3>
+            <p>Mouda는 13세 미만의 아동을 포함한 어떠한 사용자로부터도 데이터를 수집하지 않습니다.</p>
+
+            <h3>정책 변경</h3>
+            <p>본 개인정보 처리방침은 수시로 업데이트될 수 있습니다. 변경 사항은 이 페이지에 반영되며 최종 업데이트 날짜가 함께 갱신됩니다.</p>
+
+            <div class="section-divider"></div>
+
+            <h2 id="support-ko">지원</h2>
+            <p>Mouda 사용 중 도움이 필요하시거나, 버그를 발견하셨거나, 새로운 기능을 제안하고 싶으시다면 언제든 문의해 주세요.</p>
+
+            <div class="contact-card">
+                <dl>
+                    <dt>이메일</dt>
+                    <dd><a href="mailto:ostarangelo@naver.com">ostarangelo@naver.com</a></dd>
+                    <dt>이슈</dt>
+                    <dd><a href="https://github.com/ttub-nii/mouda-pages/issues">GitHub Issues</a></dd>
+                    <dt>응답 시간</dt>
+                    <dd>보통 영업일 기준 2–3일 이내</dd>
+                </dl>
+            </div>
+
+            <h3>자주 묻는 질문</h3>
+            <p><strong>데이터는 백업되나요?</strong><br>Mouda는 기기에 로컬로 데이터를 저장합니다. iOS 시스템 설정에서 iCloud 백업을 켜두시면 기기 백업에 앱 데이터가 함께 포함됩니다.</p>
+            <p><strong>여러 기기에서 같이 쓸 수 있나요?</strong><br>데이터는 기기별 로컬 저장 방식으로, 현재는 기기 간 동기화를 지원하지 않습니다.</p>
+            <p><strong>모든 데이터를 지우는 방법이 있나요?</strong><br>기기에서 앱을 삭제하시면 됩니다. 모든 데이터는 앱과 함께 제거됩니다.</p>
+        </div>
+
+        <!-- Japanese -->
+        <div data-lang="ja">
+            <p class="updated">最終更新日: 2026年4月23日</p>
+            <nav class="toc">
+                <a href="#privacy-ja">プライバシーポリシー</a>
+                <a href="#support-ja">サポート</a>
+            </nav>
+
+            <h2 id="privacy-ja">プライバシーポリシー</h2>
+            <div class="highlight">
+                <strong>Mouda は一切の個人情報を収集・保存・送信しません。</strong>
+                すべての資産データはお使いのデバイス内にのみ保存されます。
+            </div>
+
+            <h3>データの保存</h3>
+            <p>Mouda は Apple の SwiftData フレームワークを使用し、すべてのデータをデバイス内にローカル保存します。資産名、カテゴリ、月別記録を含むすべての金融情報はデバイス外に送信されません。</p>
+
+            <h3>データの収集</h3>
+            <p>以下を含む、いかなる情報も収集しません:</p>
+            <ul>
+                <li>個人識別情報</li>
+                <li>金融データや取引履歴</li>
+                <li>使用状況の分析・トラッキングデータ</li>
+                <li>デバイス識別子</li>
+                <li>位置情報</li>
+            </ul>
+
+            <h3>第三者サービス</h3>
+            <p>Mouda は解析、広告、トラッキングなど、いかなる第三者サービスとも連携していません。本アプリは完全にオフラインで動作し、ネットワークリクエストを一切行いません。</p>
+
+            <h3>データの削除</h3>
+            <p>すべてのデータはデバイス内にローカル保存されるため、アプリを削除することでいつでもすべての記録を完全に削除できます。外部サーバーにデータは残りません。</p>
+
+            <h3>子どものプライバシー</h3>
+            <p>Mouda は13歳未満の子どもを含む、いかなる利用者からもデータを収集しません。</p>
+
+            <h3>ポリシーの変更</h3>
+            <p>本プライバシーポリシーは随時更新される場合があります。変更内容は本ページに反映され、最終更新日が併せて更新されます。</p>
+
+            <div class="section-divider"></div>
+
+            <h2 id="support-ja">サポート</h2>
+            <p>Mouda のご利用でお困りのこと、バグのご報告、機能のご要望などがございましたら、お気軽にお問い合わせください。</p>
+
+            <div class="contact-card">
+                <dl>
+                    <dt>メール</dt>
+                    <dd><a href="mailto:ostarangelo@naver.com">ostarangelo@naver.com</a></dd>
+                    <dt>Issues</dt>
+                    <dd><a href="https://github.com/ttub-nii/mouda-pages/issues">GitHub Issues</a></dd>
+                    <dt>返信までの目安</dt>
+                    <dd>通常、営業日ベースで2〜3日以内</dd>
+                </dl>
+            </div>
+
+            <h3>よくある質問</h3>
+            <p><strong>データはバックアップされますか?</strong><br>Mouda はデータをデバイス内にローカル保存します。iOS のシステム設定で iCloud バックアップを有効にすると、デバイスのバックアップにアプリのデータも含まれます。</p>
+            <p><strong>複数のデバイスで利用できますか?</strong><br>データはデバイスごとにローカル保存されるため、現在はデバイス間の同期に対応していません。</p>
+            <p><strong>すべてのデータを削除するには?</strong><br>デバイスからアプリを削除してください。すべてのデータがアプリと共に削除されます。</p>
+        </div>
+
+        <footer>
+            © 2026 tomaker
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            const supported = ['en', 'ko', 'ja'];
+            function detect() {
+                const saved = localStorage.getItem('mouda-lang');
+                if (saved && supported.includes(saved)) return saved;
+                const hash = (location.hash || '').replace('#', '').split('-').pop();
+                if (supported.includes(hash)) return hash;
+                const nav = (navigator.language || 'en').toLowerCase();
+                if (nav.startsWith('ko')) return 'ko';
+                if (nav.startsWith('ja')) return 'ja';
+                return 'en';
+            }
+            function apply(lang) {
+                document.documentElement.lang = lang;
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+                });
+                document.querySelectorAll('.lang-switch button').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+                });
+                try { localStorage.setItem('mouda-lang', lang); } catch (_) {}
+            }
+            document.querySelectorAll('.lang-switch button').forEach(btn => {
+                btn.addEventListener('click', () => apply(btn.getAttribute('data-set-lang')));
+            });
+            apply(detect());
+        })();
+    </script>
+</body>
+</html>
