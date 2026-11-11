@@ -96,11 +96,12 @@
             font-size: 16px;
             margin-bottom: 12px;
         }
-        ul {
+        ul, ol {
             padding-left: 22px;
             margin-bottom: 12px;
         }
-        a { color: #007aff; }
+        a { color: #007aff; overflow-wrap: anywhere; }
+        [id] { scroll-margin-top: 24px; }
         .highlight {
             background: #f0f7ff;
             border-left: 4px solid #007aff;
@@ -133,6 +134,15 @@
         }
         [data-lang] { display: none; }
         [data-lang].active { display: block; }
+        @media (max-width: 480px) {
+            body { padding: 12px; }
+            .container { padding: 28px 20px; }
+            .lang-switch { flex-wrap: wrap; }
+            .lang-switch button { padding: 6px 10px; }
+            .contact-card { padding: 16px; }
+            .contact-card dl { grid-template-columns: 1fr; gap: 4px; }
+            .contact-card dd { margin-bottom: 8px; }
+        }
         @media (prefers-color-scheme: dark) {
             body { background: #000; color: #f2f2f7; }
             .container { background: #1c1c1e; box-shadow: none; }
@@ -164,10 +174,12 @@
 
         <!-- English -->
         <div data-lang="en">
-            <p class="updated">Last updated: September 3, 2026</p>
+            <p class="updated">Last updated: November 12, 2026</p>
             <nav class="toc">
                 <a href="#privacy-en">Privacy Policy</a>
                 <a href="#support-en">Support</a>
+                <a href="#sync-en">iCloud Sync</a>
+                <a href="#backup-en">Backup & Restore</a>
             </nav>
 
             <h2 id="privacy-en">Privacy Policy</h2>
@@ -218,17 +230,43 @@
             </div>
 
             <h3>Frequently Asked Questions</h3>
-            <p><strong>Is my data backed up?</strong><br>Records are stored on your device first and sync through your private iCloud database when iCloud is available.</p>
-            <p><strong>Can I use Mouda on multiple devices?</strong><br>Yes. Sign in to the same iCloud account on your Apple devices to synchronize your records.</p>
+            <p><strong>Is my data backed up?</strong><br>Your records are stored on your device and can sync through your private iCloud database. Syncing is not a separate backup: changes and deletions can sync too. You can also create a backup file in Mouda’s settings.</p>
+
             <p><strong>How do I delete all my data?</strong><br>Delete your records in Mouda while iCloud is available, then remove the app from your devices.</p>
+            <h3 id="sync-en">iCloud Sync</h3>
+            <p>Use the same Apple Account for iCloud on each device. If records are missing on another device, work through these steps.</p>
+            <ol>
+                <li><strong>Check iCloud on your iPhone or iPad.</strong> Open Settings → [your name] → iCloud. Find Mouda in the list of apps using iCloud and make sure it is enabled. Check that this is the same Apple Account you use on your Mac.</li>
+                <li><strong>Check iCloud on your Mac.</strong> Open System Settings → [your name] → iCloud and make sure Mouda is enabled. Depending on your OS version, look under “See All,” “Apps Using iCloud,” or iCloud Drive → “Apps Syncing to iCloud Drive.”</li>
+                <li><strong>Check your connection and iCloud storage.</strong> Connect both devices to the internet, preferably Wi-Fi, and check for full iCloud storage or account warnings. If syncing is delayed, try temporarily turning off Low Data Mode and Low Power Mode.</li>
+                <li><strong>Give syncing time to complete.</strong> Open Mouda on the device with your records, then open it on the other device. Keep both apps open for a few minutes. If nothing appears, close and reopen Mouda on the receiving device. The initial sync may take longer.</li>
+                <li><strong>Still not syncing?</strong> Contact us using the email above with the Mouda version on each device, your iOS/iPadOS/macOS versions, and whether both apps came from the App Store. Tell us whether all assets are missing or only their monthly values, and which steps you tried. Please do not include financial records or a backup file in your initial message.</li>
+            </ol>
+            <p>Menu names vary by OS version. If iCloud Drive is shown, check that it is turned on. Keep the app and its data on the device that has your records; do not delete or reinstall it as a troubleshooting step.</p>
+            <p><a href="https://support.apple.com/guide/icloud/mmfeb236a772/icloud">Apple’s guide to enabling iCloud for apps</a></p>
+            <h3 id="backup-en">Backup & Restore</h3>
+            <p>If syncing still does not work, you can transfer a backup file manually. This copies your records; it does not repair or enable automatic syncing.</p>
+            <ol>
+                <li>On your Mac, open Mouda → Settings (⌘,) → “Data Backup” → “Create Backup File.” Click “Show in Finder” to locate the file.</li>
+                <li>Send the file to your iPhone or iPad with AirDrop and save it in Files, or save it to iCloud Drive and wait until it is available in Files on the receiving device.</li>
+                <li>On your iPhone or iPad, tap the gear icon on Mouda’s main screen → “Data Backup” → “Restore from Backup,” then select the backup file.</li>
+            </ol>
+            <ul>
+                <li><strong>Replace All Data:</strong> Deletes the current Mouda data on the receiving device and replaces it with the backup. Use this only when that device has no records you need to keep, or you intentionally want to replace them.</li>
+                <li><strong>Merge (Keep Existing):</strong> Keeps existing data and adds missing assets and monthly records. Separately created assets with the same name may remain separate. If Mouda reports a currency mismatch, check the base currency before merging.</li>
+            </ul>
+            <div class="highlight">Before restoring, back up any records you want to keep on either device. If iCloud syncing resumes, restored changes and deletions may also reach your other devices. Keep the original backup until you have checked the restored data.</div>
+
         </div>
 
         <!-- Korean -->
         <div data-lang="ko">
-            <p class="updated">최종 업데이트: 2026년 9월 3일</p>
+            <p class="updated">최종 업데이트: 2026년 11월 12일</p>
             <nav class="toc">
                 <a href="#privacy-ko">개인정보 처리방침</a>
                 <a href="#support-ko">지원</a>
+                <a href="#sync-ko">iCloud 동기화</a>
+                <a href="#backup-ko">백업 및 복원</a>
             </nav>
 
             <h2 id="privacy-ko">개인정보 처리방침</h2>
@@ -279,17 +317,43 @@
             </div>
 
             <h3>자주 묻는 질문</h3>
-            <p><strong>데이터가 백업되나요?</strong><br>기록은 기기에 우선 저장되며 iCloud를 사용할 수 있을 때 비공개 iCloud 데이터베이스를 통해 동기화됩니다.</p>
-            <p><strong>여러 기기에서 같이 쓸 수 있나요?</strong><br>네. Apple 기기에서 동일한 iCloud 계정으로 로그인하면 기록이 동기화됩니다.</p>
+            <p><strong>데이터가 백업되나요?</strong><br>기록은 기기에 저장되며 비공개 iCloud 데이터베이스를 통해 동기화할 수 있습니다. 변경과 삭제도 다른 기기에 반영되므로 동기화는 별도의 백업이 아닙니다. Mouda 설정에서 백업 파일을 만들 수도 있습니다.</p>
+
             <p><strong>모든 데이터를 지우는 방법이 있나요?</strong><br>iCloud를 사용할 수 있는 상태에서 Mouda의 기록을 삭제한 뒤 모든 기기에서 앱을 삭제하세요.</p>
+            <h3 id="sync-ko">iCloud 동기화</h3>
+            <p>모든 기기의 iCloud에 같은 Apple 계정으로 로그인하세요. 다른 기기에 기록이 보이지 않으면 다음 순서로 확인해 주세요.</p>
+            <ol>
+                <li><strong>iPhone 또는 iPad의 iCloud 설정을 확인하세요.</strong> 설정 → [사용자 이름] → iCloud에서 iCloud를 사용하는 앱 목록을 열고 Mouda가 켜져 있는지 확인하세요. Mac과 같은 Apple 계정인지도 확인해 주세요.</li>
+                <li><strong>Mac의 iCloud 설정을 확인하세요.</strong> 시스템 설정 → [사용자 이름] → iCloud에서 Mouda가 켜져 있는지 확인하세요. OS 버전에 따라 ‘모두 보기’, ‘iCloud를 사용하는 앱’ 또는 iCloud Drive의 앱 동기화 목록에 표시될 수 있습니다.</li>
+                <li><strong>인터넷 연결과 iCloud 저장 공간을 확인하세요.</strong> 두 기기를 인터넷에 연결하고 가능하면 Wi-Fi를 이용하세요. iCloud 저장 공간 부족이나 계정 관련 경고가 있는지 확인해 주세요. 동기화가 지연되면 저데이터 모드와 저전력 모드를 잠시 꺼 보세요.</li>
+                <li><strong>동기화할 시간을 주세요.</strong> 기록이 있는 기기에서 Mouda를 연 뒤 다른 기기에서도 열고 몇 분간 기다려 주세요. 변화가 없으면 기록을 받을 기기에서 Mouda를 닫았다가 다시 열어 보세요. 처음 동기화할 때는 더 오래 걸릴 수 있습니다.</li>
+                <li><strong>그래도 동기화되지 않나요?</strong> 위 이메일로 각 기기의 Mouda 버전, iOS/iPadOS/macOS 버전, App Store 설치 여부와 시도한 방법을 알려 주세요. 자산 전체가 안 보이는지, 월별 금액만 없는지도 알려 주시면 도움이 됩니다. 첫 문의에는 금융 기록이나 백업 파일을 첨부하지 않아도 됩니다.</li>
+            </ol>
+            <p>메뉴 이름은 OS 버전에 따라 다를 수 있습니다. iCloud Drive가 표시되면 켜져 있는지도 확인하세요. 기록이 남아 있는 기기의 앱과 데이터는 그대로 보관하고, 문제 해결을 위해 앱을 삭제하거나 재설치하지 마세요.</p>
+            <p><a href="https://support.apple.com/guide/icloud/mmfeb236a772/icloud">Apple의 앱별 iCloud 설정 안내</a></p>
+            <h3 id="backup-ko">백업 및 복원</h3>
+            <p>동기화가 되지 않으면 백업 파일로 기록을 직접 옮길 수 있습니다. 기록을 복사하는 방법이며 자동 동기화를 복구하거나 켜는 기능은 아닙니다.</p>
+            <ol>
+                <li>Mac에서 Mouda 메뉴 → 설정 (⌘,) → ‘데이터 백업’ → ‘백업 파일 만들기’를 선택하세요. ‘Finder에서 보기’를 눌러 파일 위치를 확인하세요.</li>
+                <li>AirDrop으로 iPhone 또는 iPad에 보내 파일 앱에 저장하거나, iCloud Drive에 저장한 뒤 받는 기기의 파일 앱에서 사용할 수 있을 때까지 기다리세요.</li>
+                <li>iPhone 또는 iPad의 Mouda 메인 화면에서 톱니바퀴 → ‘데이터 백업’ → ‘백업에서 복원하기’를 누르고 백업 파일을 선택하세요.</li>
+            </ol>
+            <ul>
+                <li><strong>전체 데이터 교체:</strong> 받는 기기의 Mouda 데이터를 삭제하고 백업 내용으로 교체합니다. 보관할 기록이 없거나 기존 기록을 의도적으로 교체할 때만 선택하세요.</li>
+                <li><strong>병합 (기존 데이터 유지):</strong> 기존 데이터를 유지하고 없는 자산과 월별 기록을 추가합니다. 별도로 만든 동명의 자산은 서로 다른 자산으로 남을 수 있습니다. 통화 불일치 안내가 나오면 병합 전에 기준 통화를 확인하세요.</li>
+            </ul>
+            <div class="highlight">복원 전에 두 기기에서 보관할 기록을 각각 백업하세요. iCloud 동기화가 재개되면 복원으로 인한 변경과 삭제가 다른 기기에도 반영될 수 있습니다. 복원 결과를 확인할 때까지 원본 백업 파일을 보관하세요.</div>
+
         </div>
 
         <!-- Japanese -->
         <div data-lang="ja">
-            <p class="updated">最終更新日: 2026年9月3日</p>
+            <p class="updated">最終更新日：2026年11月12日</p>
             <nav class="toc">
                 <a href="#privacy-ja">プライバシーポリシー</a>
                 <a href="#support-ja">サポート</a>
+                <a href="#sync-ja">iCloud同期</a>
+                <a href="#backup-ja">バックアップと復元</a>
             </nav>
 
             <h2 id="privacy-ja">プライバシーポリシー</h2>
@@ -340,17 +404,43 @@
             </div>
 
             <h3>よくある質問</h3>
-            <p><strong>データはバックアップされますか?</strong><br>記録はまずデバイスに保存され、iCloud利用時は非公開のiCloudデータベースを通じて同期されます。</p>
-            <p><strong>複数のデバイスで利用できますか?</strong><br>はい。同じiCloudアカウントでサインインしたAppleデバイス間で記録を同期できます。</p>
+            <p><strong>データはバックアップされますか?</strong><br>記録はデバイスに保存され、非公開のiCloudデータベースを通じて同期できます。変更や削除も同期されるため、同期は独立したバックアップではありません。Moudaの設定でバックアップファイルを作成できます。</p>
+
             <p><strong>すべてのデータを削除するには?</strong><br>iCloudが利用できる状態でMouda内の記録を削除してから、各デバイスからアプリを削除してください。</p>
+            <h3 id="sync-ja">iCloud同期</h3>
+            <p>各デバイスのiCloudに同じApple Accountでサインインしてください。別のデバイスに記録が表示されない場合は、次の順に確認してください。</p>
+            <ol>
+                <li><strong>iPhoneまたはiPadのiCloud設定を確認します。</strong> 設定 → [自分の名前] → iCloudで、iCloudを使用するアプリの一覧からMoudaを有効にします。Macと同じApple Accountかも確認してください。</li>
+                <li><strong>MacのiCloud設定を確認します。</strong> システム設定 → [自分の名前] → iCloudでMoudaを有効にします。OSによって「すべて見る」、iCloudを使用するアプリ、またはiCloud Driveのアプリ同期一覧に表示されます。</li>
+                <li><strong>接続と空き容量を確認します。</strong> 両方のデバイスをインターネット（できればWi-Fi）に接続し、iCloudの容量不足やアカウントの警告がないか確認します。同期が遅れる場合は、省データモードと低電力モードを一時的にオフにしてみてください。</li>
+                <li><strong>同期を待ちます。</strong> 記録のあるデバイスでMoudaを開き、もう一方でも開いて数分待ちます。表示されなければ、受信側でMoudaを閉じて開き直してください。初回の同期にはさらに時間がかかる場合があります。</li>
+                <li><strong>解決しない場合はお問い合わせください。</strong> 上記のメールアドレスに、各デバイスのMoudaとiOS/iPadOS/macOSのバージョン、App Storeからのインストールかどうか、試した手順をお知らせください。資産全体が表示されないのか、月別の金額だけなのかもお伝えください。最初のお問い合わせに金融記録やバックアップファイルを添付する必要はありません。</li>
+            </ol>
+            <p>メニュー名はOSによって異なります。iCloud Driveが表示される場合は、有効になっているかも確認してください。記録があるデバイスのアプリとデータはそのまま残し、対処のために削除や再インストールをしないでください。</p>
+            <p><a href="https://support.apple.com/guide/icloud/mmfeb236a772/icloud">Appleのアプリ別iCloud設定ガイド</a></p>
+            <h3 id="backup-ja">バックアップと復元</h3>
+            <p>同期できない場合は、バックアップファイルで記録を手動で移せます。これは記録のコピーであり、自動同期を修復・有効化するものではありません。</p>
+            <ol>
+                <li>MacでMoudaメニュー → 設定 (⌘,) → 「データバックアップ」→「バックアップファイルを作成」を選びます。「Finderで表示」でファイルの場所を確認します。</li>
+                <li>AirDropでiPhoneまたはiPadに送り「ファイル」に保存するか、iCloud Driveに保存し、受信側の「ファイル」で利用可能になるまで待ちます。</li>
+                <li>iPhoneまたはiPadのMoudaのメイン画面で歯車 →「データバックアップ」→「バックアップから復元」をタップし、ファイルを選びます。</li>
+            </ol>
+            <ul>
+                <li><strong>全データを置換:</strong> 受信側のMoudaのデータを削除し、バックアップで置き換えます。残す必要のある記録がない場合、または意図的に置き換える場合にのみ選んでください。</li>
+                <li><strong>マージ（既存データを保持）:</strong> 既存データを保持し、不足する資産と月別記録を追加します。別々に作成した同名の資産は別の資産として残ることがあります。通貨の不一致が表示された場合は、基準通貨を確認してください。</li>
+            </ul>
+            <div class="highlight">復元前に、両方のデバイスで残したい記録をバックアップしてください。iCloud同期が再開すると、復元による変更や削除が他のデバイスにも反映される場合があります。復元結果を確認するまで元のバックアップを保管してください。</div>
+
         </div>
 
         <!-- Simplified Chinese -->
         <div data-lang="zh">
-            <p class="updated">最后更新：2026年9月3日</p>
+            <p class="updated">最后更新：2026年11月12日</p>
             <nav class="toc">
                 <a href="#privacy-zh">隐私政策</a>
                 <a href="#support-zh">支持</a>
+                <a href="#sync-zh">iCloud同步</a>
+                <a href="#backup-zh">备份与恢复</a>
             </nav>
 
             <h2 id="privacy-zh">隐私政策</h2>
@@ -401,17 +491,43 @@
             </div>
 
             <h3>常见问题</h3>
-            <p><strong>我的数据会备份吗？</strong><br>记录会优先保存在设备上；iCloud可用时，会通过你的私有iCloud数据库同步。</p>
-            <p><strong>可以在多台设备上使用Mouda吗？</strong><br>可以。在Apple设备上登录同一iCloud账户即可同步记录。</p>
+            <p><strong>我的数据会备份吗？</strong><br>记录保存在设备上，并可通过你的私有iCloud数据库同步。修改和删除也会同步，因此同步并不是独立的备份。你也可以在Mouda设置中创建备份文件。</p>
+
             <p><strong>如何删除全部数据？</strong><br>请在iCloud可用时删除Mouda中的记录，再从所有设备上删除应用。</p>
+            <h3 id="sync-zh">iCloud同步</h3>
+            <p>请在各台设备的iCloud中登录同一个Apple账户。如果另一台设备上没有显示记录，请按以下步骤检查。</p>
+            <ol>
+                <li><strong>检查iPhone或iPad的iCloud设置。</strong> 打开设置 → [你的姓名] → iCloud，在使用iCloud的应用列表中启用Mouda，并确认与Mac使用相同的Apple账户。</li>
+                <li><strong>检查Mac的iCloud设置。</strong> 打开系统设置 → [你的姓名] → iCloud，确认Mouda已启用。根据系统版本，它可能位于“查看全部”、使用iCloud的应用列表，或iCloud云盘的应用同步列表中。</li>
+                <li><strong>检查网络和iCloud储存空间。</strong> 将两台设备连接到互联网，建议使用Wi-Fi。检查是否有空间不足或账户警告。如果同步延迟，可尝试暂时关闭低数据模式和低电量模式。</li>
+                <li><strong>留出同步时间。</strong> 在有记录的设备上打开Mouda，然后在另一台设备上打开，保持打开几分钟。如果仍未显示，请在接收设备上关闭并重新打开Mouda。首次同步可能需要更长时间。</li>
+                <li><strong>仍然无法同步？</strong> 请通过上方邮箱告知每台设备的Mouda版本、iOS/iPadOS/macOS版本、是否从App Store安装，以及已尝试的步骤。请说明是所有资产都不显示，还是仅缺少月度金额。首次联系时无需附上财务记录或备份文件。</li>
+            </ol>
+            <p>菜单名称可能因系统版本而异。如果显示iCloud云盘，请检查其是否已启用。请保留有记录的设备上的应用和数据，不要通过删除或重新安装应用来排查此问题。</p>
+            <p><a href="https://support.apple.com/guide/icloud/mmfeb236a772/icloud">Apple的应用iCloud设置指南</a></p>
+            <h3 id="backup-zh">备份与恢复</h3>
+            <p>如果仍无法同步，可以使用备份文件手动转移记录。这会复制记录，但不会修复或启用自动同步。</p>
+            <ol>
+                <li>在Mac上打开Mouda菜单 → 设置 (⌘,) → “数据备份” → “创建备份文件”。点击“在Finder中显示”查看文件位置。</li>
+                <li>通过隔空投送发送到iPhone或iPad并保存到“文件”，或保存到iCloud云盘，等待接收设备的“文件”中可以使用该文件。</li>
+                <li>在iPhone或iPad的Mouda主界面点击齿轮 → “数据备份” → “从备份恢复”，然后选择备份文件。</li>
+            </ol>
+            <ul>
+                <li><strong>替换全部数据:</strong> 删除接收设备上现有的Mouda数据，并用备份替换。仅在没有需要保留的记录，或确实希望替换现有记录时使用。</li>
+                <li><strong>合并（保留现有数据）:</strong> 保留现有数据，添加缺少的资产和月度记录。分别创建的同名资产可能仍被视为不同资产。如果提示货币不匹配，请先检查基础货币。</li>
+            </ul>
+            <div class="highlight">恢复前，请分别备份两台设备上需要保留的记录。如果iCloud同步恢复，恢复操作产生的修改和删除也可能同步到其他设备。确认恢复结果前，请保留原始备份文件。</div>
+
         </div>
 
         <!-- Hindi -->
         <div data-lang="hi">
-            <p class="updated">अंतिम अपडेट: 3 सितंबर 2026</p>
+            <p class="updated">अंतिम अपडेट: 12 नवंबर 2026</p>
             <nav class="toc">
                 <a href="#privacy-hi">गोपनीयता नीति</a>
                 <a href="#support-hi">सहायता</a>
+                <a href="#sync-hi">iCloud सिंक</a>
+                <a href="#backup-hi">बैकअप और पुनर्स्थापना</a>
             </nav>
 
             <h2 id="privacy-hi">गोपनीयता नीति</h2>
@@ -462,9 +578,33 @@
             </div>
 
             <h3>अक्सर पूछे जाने वाले प्रश्न</h3>
-            <p><strong>क्या मेरा डेटा बैकअप होता है?</strong><br>रिकॉर्ड पहले आपके डिवाइस पर रहते हैं और iCloud उपलब्ध होने पर आपके निजी iCloud डेटाबेस से सिंक होते हैं।</p>
-            <p><strong>क्या Mouda कई डिवाइसों पर इस्तेमाल कर सकता हूँ?</strong><br>हाँ। रिकॉर्ड सिंक करने के लिए अपने Apple डिवाइसों पर उसी iCloud खाते से साइन इन करें।</p>
+            <p><strong>क्या मेरा डेटा बैकअप होता है?</strong><br>रिकॉर्ड आपके डिवाइस पर रहते हैं और आपके निजी iCloud डेटाबेस से सिंक हो सकते हैं। बदलाव और हटाए गए रिकॉर्ड भी सिंक होते हैं, इसलिए सिंक एक अलग बैकअप नहीं है। Mouda की सेटिंग्स में बैकअप फ़ाइल भी बना सकते हैं।</p>
+
             <p><strong>मैं अपना सारा डेटा कैसे हटाऊँ?</strong><br>iCloud उपलब्ध रहते हुए Mouda के रिकॉर्ड हटाएँ, फिर अपने सभी डिवाइसों से ऐप हटाएँ।</p>
+            <h3 id="sync-hi">iCloud सिंक</h3>
+            <p>हर डिवाइस पर iCloud के लिए एक ही Apple खाते से साइन इन करें। दूसरे डिवाइस पर रिकॉर्ड न दिखें तो ये चरण आज़माएँ।</p>
+            <ol>
+                <li><strong>iPhone या iPad पर iCloud जाँचें।</strong> सेटिंग्स → [आपका नाम] → iCloud खोलें और iCloud इस्तेमाल करने वाले ऐप्स की सूची में Mouda चालू करें। सुनिश्चित करें कि Mac पर भी वही Apple खाता है।</li>
+                <li><strong>Mac पर iCloud जाँचें।</strong> सिस्टम सेटिंग्स → [आपका नाम] → iCloud में Mouda चालू करें। OS के अनुसार यह “See All”, “Apps Using iCloud” या iCloud Drive की ऐप सिंक सूची में हो सकता है।</li>
+                <li><strong>इंटरनेट और iCloud स्टोरेज जाँचें।</strong> दोनों डिवाइस इंटरनेट से जोड़ें, हो सके तो Wi-Fi से। देखें कि iCloud स्टोरेज भरा न हो और खाते की कोई चेतावनी न हो। देरी होने पर Low Data Mode और Low Power Mode थोड़ी देर के लिए बंद करके देखें।</li>
+                <li><strong>सिंक के लिए समय दें।</strong> रिकॉर्ड वाले डिवाइस पर Mouda खोलें, फिर दूसरे पर खोलकर दोनों ऐप कुछ मिनट खुले रखें। रिकॉर्ड न दिखें तो प्राप्त करने वाले डिवाइस पर Mouda बंद करके दोबारा खोलें। पहली बार सिंक होने में अधिक समय लग सकता है।</li>
+                <li><strong>फिर भी सिंक नहीं हो रहा?</strong> ऊपर दिए ईमेल पर हर डिवाइस का Mouda और iOS/iPadOS/macOS संस्करण, App Store से इंस्टॉल किया है या नहीं, और आज़माए गए चरण बताएँ। सभी एसेट गायब हैं या केवल मासिक राशियाँ, यह भी बताएँ। पहले संदेश में वित्तीय रिकॉर्ड या बैकअप फ़ाइल भेजने की ज़रूरत नहीं है।</li>
+            </ol>
+            <p>मेनू के नाम OS संस्करण के अनुसार बदल सकते हैं। iCloud Drive दिखे तो जाँचें कि वह चालू है। रिकॉर्ड वाले डिवाइस पर ऐप और डेटा सुरक्षित रखें; समस्या हल करने के लिए ऐप हटाएँ या दोबारा इंस्टॉल न करें।</p>
+            <p><a href="https://support.apple.com/guide/icloud/mmfeb236a772/icloud">ऐप्स के लिए iCloud चालू करने की Apple गाइड</a></p>
+            <h3 id="backup-hi">बैकअप और पुनर्स्थापना</h3>
+            <p>सिंक न होने पर बैकअप फ़ाइल से रिकॉर्ड मैन्युअल रूप से भेज सकते हैं। यह रिकॉर्ड कॉपी करता है; अपने-आप होने वाला सिंक ठीक या चालू नहीं करता।</p>
+            <ol>
+                <li>Mac पर Mouda मेनू → सेटिंग्स (⌘,) → “डेटा बैकअप” → “बैकअप फ़ाइल बनाएँ” चुनें। फ़ाइल ढूँढने के लिए “Finder में दिखाएँ” पर क्लिक करें।</li>
+                <li>AirDrop से iPhone या iPad पर भेजकर Files में सहेजें, या iCloud Drive में सहेजकर प्राप्त करने वाले डिवाइस के Files ऐप में उपलब्ध होने तक प्रतीक्षा करें।</li>
+                <li>iPhone या iPad पर Mouda की मुख्य स्क्रीन में गियर आइकन → “डेटा बैकअप” → “बैकअप से पुनर्स्थापित करें” चुनें, फिर बैकअप फ़ाइल चुनें।</li>
+            </ol>
+            <ul>
+                <li><strong>सारा डेटा बदलें:</strong> प्राप्त करने वाले डिवाइस का मौजूदा Mouda डेटा हटाकर बैकअप से बदलता है। केवल तब चुनें जब वहाँ रखने योग्य रिकॉर्ड न हों या आप जानबूझकर उन्हें बदलना चाहते हों।</li>
+                <li><strong>मर्ज करें (मौजूदा रखें):</strong> मौजूदा डेटा रखता है और छूटे हुए एसेट व मासिक रिकॉर्ड जोड़ता है। अलग-अलग बनाए गए एक ही नाम के एसेट अलग रह सकते हैं। मुद्रा मेल न खाने का संदेश आए तो पहले आधार मुद्रा जाँचें।</li>
+            </ul>
+            <div class="highlight">पुनर्स्थापना से पहले दोनों डिवाइस पर रखने योग्य रिकॉर्ड का बैकअप बनाएँ। iCloud सिंक फिर शुरू होने पर बदलाव और हटाए गए रिकॉर्ड दूसरे डिवाइसों पर भी लागू हो सकते हैं। परिणाम जाँचने तक मूल बैकअप फ़ाइल रखें।</div>
+
         </div>
 
         <footer>
